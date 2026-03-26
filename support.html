@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Solo</title>
+  <meta name="description" content="Get help with Solo — your private vocal studio. Frequently asked questions, pricing, and privacy information." />
+  <link rel="icon" href="s.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .support-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 140px 24px 80px;
+    }
+
+    .support-hero {
+      margin-bottom: 72px;
+    }
+
+    .support-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 64px);
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .support-hero p {
+      font-size: 17px;
+      color: var(--secondary);
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    .support-hero a {
+      color: var(--amber);
+    }
+
+    /* Section headings */
+    .support-section {
+      margin-bottom: 64px;
+    }
+
+    .support-section-title {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 24px;
+    }
+
+    /* FAQ items */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--glass);
+      transition: background 0.2s;
+    }
+
+    details[open] {
+      background: rgba(255,255,255,0.05);
+    }
+
+    details summary {
+      padding: 20px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--fg);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      user-select: none;
+    }
+
+    details summary::-webkit-details-marker { display: none; }
+
+    details summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--secondary);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      padding: 0 24px 20px;
+      font-size: 15px;
+      color: var(--secondary);
+      line-height: 1.75;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Pricing cards */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .plan-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 24px;
+      background: var(--glass);
+    }
+
+    .plan-card.featured {
+      border-color: rgba(200,169,126,0.4);
+      background: rgba(200,169,126,0.05);
+    }
+
+    .plan-name {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 12px;
+    }
+
+    .plan-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--fg);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .plan-period {
+      font-size: 12px;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .plan-features li {
+      font-size: 13px;
+      color: var(--secondary);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .plan-features li::before {
+      content: '✓';
+      color: var(--amber);
+      flex-shrink: 0;
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    .plan-features li.locked::before {
+      content: '—';
+      color: rgba(255,255,255,0.15);
+    }
+
+    .plan-features li.locked {
+      opacity: 0.35;
+    }
+
+    .pricing-note {
+      font-size: 13px;
+      color: var(--secondary);
+      margin-top: 16px;
+      line-height: 1.6;
+      opacity: 0.7;
+    }
+
+    /* Contact */
+    .contact-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+      background: var(--glass);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .contact-card p {
+      font-size: 15px;
+      color: var(--secondary);
+      line-height: 1.6;
+      max-width: 400px;
+    }
+
+    @media (max-width: 680px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .contact-card { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-brand">
+      <img class="nav-logo" src="s-mark.svg" alt="Solo mark" />
+      <a href="index.html" class="nav-wordmark">Solo</a>
+    </div>
+    <a href="index.html" class="btn btn-outline">← Home</a>
+  </nav>
+
+  <div class="support-wrap">
+
+    <div class="support-hero">
+      <h1>Support</h1>
+      <p>Answers to common questions about Solo. Can't find what you're looking for? Email us at <a href="mailto:hi@solo.app">hi@solo.app</a> — we read every message.</p>
+    </div>
+
+    <!-- PRICING -->
+    <div class="support-section">
+      <p class="support-section-title">Pricing</p>
+      <div class="pricing-grid">
+
+        <div class="plan-card">
+          <p class="plan-name">Free</p>
+          <p class="plan-price">$0</p>
+          <p class="plan-period">forever</p>
+          <ul class="plan-features">
+            <li>Record &amp; mix sessions</li>
+            <li>Import any backing track</li>
+            <li>Fetch or paste lyrics</li>
+            <li>High quality M4A export</li>
+            <li>Most recent recording saved</li>
+            <li class="locked">Unlimited recordings</li>
+            <li class="locked">Layer recording</li>
+            <li class="locked">Lossless export</li>
+            <li class="locked">Preset Studio</li>
+            <li class="locked">Media icon packs</li>
+          </ul>
+        </div>
+
+        <div class="plan-card featured">
+          <p class="plan-name">Pro — Yearly</p>
+          <p class="plan-price">$19.99</p>
+          <p class="plan-period">per year · best value</p>
+          <ul class="plan-features">
+            <li>Everything in Free</li>
+            <li>Unlimited recordings</li>
+            <li>Layer recording</li>
+            <li>WAV, AIFF &amp; Lossless export</li>
+            <li>Preset Studio</li>
+            <li>Vinyl, CD, Cassette &amp; more</li>
+            <li>Custom cover artwork</li>
+            <li>New &amp; experimental features</li>
+          </ul>
+        </div>
+
+        <div class="plan-card">
+          <p class="plan-name">Pro — Monthly</p>
+          <p class="plan-price">$2.99</p>
+          <p class="plan-period">per month</p>
+          <ul class="plan-features">
+            <li>Everything in Free</li>
+            <li>Unlimited recordings</li>
+            <li>Layer recording</li>
+            <li>WAV, AIFF &amp; Lossless export</li>
+            <li>Preset Studio</li>
+            <li>Vinyl, CD, Cassette &amp; more</li>
+            <li>Custom cover artwork</li>
+            <li>New &amp; experimental features</li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="pricing-note">Subscriptions are managed through your Apple ID and renew automatically. Cancel any time in App Store Settings. Payment is charged at confirmation of purchase.</p>
+    </div>
+
+    <!-- USING SOLO -->
+    <div class="support-section">
+      <p class="support-section-title">Using Solo</p>
+      <div class="faq-list">
+
+        <details>
+          <summary>Where do I get backing tracks?</summary>
+          <div class="faq-answer">Any audio file works — MP3, M4A, WAV, AIFF, and more. Download karaoke or instrumental tracks from music stores, YouTube, or anywhere online. Once you have the file, import it from the Files app when setting up a session.</div>
+        </details>
+
+        <details>
+          <summary>Where do I get lyrics?</summary>
+          <div class="faq-answer">Solo can fetch time-synced lyrics automatically — enter the song title and artist in Setup and tap Fetch. You can also paste any plain-text lyrics directly into the lyrics field. When LRC timed lyrics are found, timestamps will appear in the field so you know sync is active.</div>
+        </details>
+
+        <details>
+          <summary>Does Solo work offline?</summary>
+          <div class="faq-answer">Yes. Import, record, review, and export all work without an internet connection. Spotify search and automatic lyrics fetching are optional enhancements — the app works fully without them.</div>
+        </details>
+
+        <details>
+          <summary>Do I need an account?</summary>
+          <div class="faq-answer">No. Solo has no login, no social feed, and no cloud account. Everything stays on your device. You don't need to create an account to use any part of the app.</div>
+        </details>
+
+        <details>
+          <summary>Where are my recordings stored?</summary>
+          <div class="faq-answer">Recordings are saved locally on your iPhone in the app's private Documents folder. Export any take from the Catalog to save it elsewhere or share it. Free users have access to their most recent recording; Pro users have unlimited history.</div>
+        </details>
+
+        <details>
+          <summary>Can I export my recordings?</summary>
+          <div class="faq-answer">Yes — tap any recording in the Catalog and use the export icon to share or save the file. Free users can export as M4A (AAC). Pro users can also export as WAV, AIFF, or Apple Lossless (ALAC). Bulk export is on the roadmap.</div>
+        </details>
+
+        <details>
+          <summary>What is layer recording?</summary>
+          <div class="faq-answer">Layer recording (Pro) lets you record a second vocal take on top of your first without leaving the session. The original recording plays back while you sing over it, and both tracks are mixed together in the final file.</div>
+        </details>
+
+        <details>
+          <summary>What is Preset Studio?</summary>
+          <div class="faq-answer">Preset Studio (Pro) is a full 6-node vocal processing chain — parametric EQ, dynamics processor, reverb, distortion, pitch correction, and spatial audio. You can dial in your sound and save it as a named preset to reuse across sessions.</div>
+        </details>
+
+        <details>
+          <summary>How do I cancel my Solo Pro subscription?</summary>
+          <div class="faq-answer">Open the Settings app on your iPhone → tap your name → Subscriptions → Solo → Cancel Subscription. Your Pro access continues until the end of the current billing period.</div>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- PRIVACY -->
+    <div class="support-section">
+      <p class="support-section-title">Privacy</p>
+      <div class="faq-list">
+
+        <details>
+          <summary>Does Solo collect any personal data?</summary>
+          <div class="faq-answer">No. Solo does not collect, transmit, or store any personal data on external servers. There are no user accounts, no analytics SDKs, and no advertising networks. Everything you create stays on your device unless you explicitly export or share it.</div>
+        </details>
+
+        <details>
+          <summary>Why does Solo need microphone access?</summary>
+          <div class="faq-answer">Solo needs microphone access to record your voice during practice sessions. Audio is captured only while you are actively recording within the app. Recordings are saved locally to your device and are never transmitted anywhere.</div>
+        </details>
+
+        <details>
+          <summary>Why does Solo need photo library access?</summary>
+          <div class="faq-answer">Solo asks for photo library access only if you choose to set a custom cover image for a recording. Photos are accessed solely for this purpose and are not stored externally or transmitted.</div>
+        </details>
+
+        <details>
+          <summary>Does Solo make any network requests?</summary>
+          <div class="faq-answer">Solo may optionally connect to Spotify (song metadata search), Musixmatch, LRCLIB, and Genius (lyrics lookup) if those features are configured. These calls send only the song title and artist you type — no personal information. All network features are optional and the app works fully without them.</div>
+        </details>
+
+        <details>
+          <summary>Will my audio ever be uploaded?</summary>
+          <div class="faq-answer">No. Vocal processing is designed to run entirely on-device. Solo does not upload your recordings to any server. If we ever add network-based features, they will be clearly labeled and strictly opt-in.</div>
+        </details>
+
+        <details>
+          <summary>How does Solo handle payments?</summary>
+          <div class="faq-answer">All payments are handled entirely by Apple through the App Store. Solo never receives, processes, or stores any payment or billing information. For details on how Apple handles purchase data, refer to Apple's Privacy Policy.</div>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="support-section">
+      <p class="support-section-title">Contact</p>
+      <div class="contact-card">
+        <p>Can't find what you need? We'd love to hear from you — bug reports, feature ideas, and feedback all welcome.</p>
+        <a href="mailto:hi@solo.app" class="btn btn-amber">Email Support</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-brand">Solo</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <div class="footer-copy">© 2025 Solo. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>

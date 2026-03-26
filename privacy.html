@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Solo</title>
+  <link rel="icon" href="s.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-brand">
+      <img class="nav-logo" src="s-mark.svg" alt="Solo mark" />
+      <a href="index.html" class="nav-wordmark">Solo</a>
+    </div>
+    <a href="index.html" class="btn btn-outline">← Back</a>
+  </nav>
+
+  <div class="legal-wrap">
+    <h1>Privacy Policy</h1>
+    <p class="legal-date">Effective date: March 25, 2025</p>
+
+    <p>Solo ("we", "our", or "the app") is committed to protecting your privacy. This policy explains what information Solo accesses, how it is used, and your rights regarding that information.</p>
+
+    <h2>1. Information We Do Not Collect</h2>
+    <p>Solo does not collect, transmit, or store any personal data on external servers. There are no user accounts, no analytics SDKs, no advertising networks, and no tracking of any kind. Your recordings, lyrics, and preferences never leave your device unless you explicitly choose to export or share them.</p>
+
+    <h2>2. Data Stored On Your Device</h2>
+    <p>All app data is stored locally on your iPhone using iOS standard mechanisms:</p>
+    <ul>
+      <li><strong>Audio recordings</strong> — saved to your device's Documents directory via FileManager. You control these files and can delete them at any time within the app.</li>
+      <li><strong>Song library and lyrics</strong> — stored using SwiftData in the app's private container on your device.</li>
+      <li><strong>Preferences and settings</strong> — stored using UserDefaults in the app's private container. This includes UI preferences, theme choices, and dismissed banners. No personally identifiable information is stored in UserDefaults.</li>
+    </ul>
+
+    <h2>3. Microphone Access</h2>
+    <p>Solo requests access to your microphone to record your voice during practice sessions. Audio is captured only while you are actively recording within the app. Recordings are saved locally to your device and are not transmitted anywhere.</p>
+
+    <h2>4. Photo Library Access</h2>
+    <p>Solo requests access to your photo library only if you choose to set a custom cover image for a recording. Photos are accessed solely for this purpose and are not stored externally or transmitted.</p>
+
+    <h2>5. Third-Party API Calls</h2>
+    <p>Solo may make outbound network requests to the following services to enhance your experience. These are optional and degrade gracefully if unavailable or unconfigured:</p>
+    <ul>
+      <li><strong>Spotify Web API</strong> — used to search for song metadata (title, artist, album art) based on text you type. Only the search query is sent. No authentication, listening history, or account data is accessed.</li>
+      <li><strong>Musixmatch API</strong> — used to fetch timed (LRC) lyrics by song title and artist name. Only title/artist strings are sent.</li>
+      <li><strong>LRCLIB</strong> — a free, open-source lyrics database used as a fallback for timed lyrics. Only title/artist strings are sent.</li>
+      <li><strong>Genius API</strong> — used as a further fallback for plain-text lyrics. Only title/artist strings are sent.</li>
+    </ul>
+    <p>These services have their own privacy policies. Solo does not share your identity with any of them, and the data sent is limited to the song metadata you explicitly enter.</p>
+
+    <h2>6. In-App Purchases</h2>
+    <p>Solo offers optional Pro subscriptions (Solo Pro) via Apple's App Store. All payment processing, subscription management, and billing is handled entirely by Apple through StoreKit. Solo does not receive, process, or store any payment information. For details on how Apple handles purchase data, refer to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</p>
+
+    <h2>7. Motion and Head Tracking</h2>
+    <p>Solo may request access to device motion data to enable head-tracked spatial audio positioning when listening back to recordings. This data is used only in real-time for audio rendering and is never stored or transmitted.</p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>Solo is not directed at children under 13. We do not knowingly collect any information from children. If you believe a child has used the app in a way that concerns you, please contact us.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. When we do, we will update the effective date at the top of this page. Continued use of Solo after changes constitutes your acceptance of the updated policy.</p>
+
+    <h2>10. Contact</h2>
+    <p>If you have questions or requests related to this privacy policy, please contact us at: <a href="mailto:privacy@solo.app">privacy@solo.app</a></p>
+  </div>
+
+  <footer>
+    <div class="footer-brand">Solo</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <div class="footer-copy">© 2025 Solo. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
